@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<html>
+<head>
+<link rel="icon" type="image/png" href="logo.jpg"/>
+<link rel="stylesheet" href="style.css">  
+</head>
+<title>Clic Labs Inc.</title>
+<a href="index.html"><img align = "left" style = "width: 50px; margin: 1%" src="logo.jpg" alt="logo" /></a>
+<body>
+<div class = "display">
+    <h1 class = "title">Cool listing!  What’s your budget?</h1>
+   <center>
+       <p style = "text-align: center; width: 80%">Please select how much you’d like to spend on the campaign. </p> 
+    </center>
+    <center>
+ <div class="frame">
+
+<input value = "50" style = "width: 70%" type="range" id="slide1" min="0" max="100" value=0 step=1 onchange="printValue('slide1', 'rangeValue1'), printValue2('slide1', 'rangeValue2')">
+     
+<script>
+function printValue(sliderID, spanbox) {
+    var x = document.getElementById(spanbox);
+    var y = document.getElementById(sliderID);
+    x.value = y.value;
+    document.getElementById("asdf").innerHTML = x.value;
+    var views = 1000*(x.value/2.5);
+    document.getElementById("lol").innerHTML = views;
+}
+    function printValue2(sliderID, spanbox) {
+    var x = document.getElementById(spanbox);
+    var y = document.getElementById(sliderID);
+    x.value = Math.round (1000*(y.value/2.5));
+    var views = 1000*(x.value/2.5);
+    document.getElementById("lol").innerHTML = views;
+}
+function slideValue(sliderID, spanbox){
+    var x = document.getElementById(spanbox);
+    var y = document.getElementById(sliderID);
+    y.value = parseInt(x.value);
+}
+window.onload = function() { printValue('slide1', 'rangeValue1');}
+</script> 
+
+     
+</div>
+</center>
+
+         <h3 style = "text-align: center"> Budget: ($) <br>
+             
+             <div id = "asdf"> </div>
+
+
+        </h3>
+
+         <h3 style = "text-align: center"> Views: <br>
+    
+<div id = "lol"> </div>
+             </h3>
+       <button><a class = "name" style = "text-decoration: none; color: white" href = "info.html">Next Step</a></button>
+          <div class = "spacer"></div>      <input class = "beep" style = "font-size: 0%; font-weight: 700; width: 8%; border-radius: 10px; border: none" type=text id="rangeValue1" value=0 width=25% onchange="slideValue('slide1', 'rangeValue1');">
+</div>
+</body>
+    
+
+    
+    
+    
+	
+</html>
